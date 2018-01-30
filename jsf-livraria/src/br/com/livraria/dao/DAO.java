@@ -15,19 +15,14 @@ public class DAO<T> {
 
 	public void adiciona(T t) {
 
-		// consegue a entity manager
 		EntityManager em = new JPAUtil().getEntityManager();
 
-		// abre transacao
 		em.getTransaction().begin();
 
-		// persiste o objeto
 		em.persist(t);
 
-		// commita a transacao
 		em.getTransaction().commit();
 
-		// fecha a entity manager
 		em.close();
 	}
 
